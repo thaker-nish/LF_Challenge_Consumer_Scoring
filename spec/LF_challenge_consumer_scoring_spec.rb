@@ -22,13 +22,13 @@ describe LFChallengeConsumerScoring do
       before(:all) do
         test_url =  ConsumerScoring::Consumer::URL
         test_url += "?age=35&income=50000&zipcode=60621"
-        stub_request(:get, "http://not_real.com/customer_scoring?age=35&income=50000&zip_code=60621").to_return(status: 200, body: '{propensity: 0.26532,ranking: "C"}')
+        stub_request(:get, "http://not_real.com/customer_scoring?age=35&income=50000&zip_code=60201").to_return(status: 200, body: '{propensity: 0.26532,ranking: "C"}')
         consumer = ConsumerScoring::Consumer.new
-        @result = consumer.scoring("50000", "60621", "35")
+        @result = consumer.scoring("50000", "60201", "35")
         @result = eval(@result)
       end
 
-      it "should return an hash" do
+      it "should return a hash" do
         expect(@result).to be_kind_of(Hash)
       end
       it "should only include 'propensity' and 'ranking" do
