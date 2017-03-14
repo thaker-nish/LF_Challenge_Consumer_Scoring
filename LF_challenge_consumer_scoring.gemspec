@@ -6,11 +6,11 @@ require 'LF_challenge_consumer_scoring/version'
 Gem::Specification.new do |spec|
   spec.name          = "LF_challenge_consumer_scoring"
   spec.version       = LFChallengeConsumerScoring::VERSION
-  spec.authors       = ["thaker-nish"]
+  spec.authors       = ["Nishant Thaker"]
   spec.email         = ["thaker.nish@gmail.com\n"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{API client for Leapfrog Online consumer scoring.}
+  spec.description   = %q{This API client will use a consumers income, zip code, and age to return scoring advice about the consumer.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
@@ -33,4 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "webmock"
+  spec.add_runtime_dependency "rest-client"
+  spec.add_runtime_dependency "json"
 end
