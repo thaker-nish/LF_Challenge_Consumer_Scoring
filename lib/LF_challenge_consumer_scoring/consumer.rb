@@ -8,8 +8,9 @@ module ConsumerScoring
 
     def scoring(income, zip_code, age)
       params = { income: income, zip_code: zip_code, age: age }
-      response = RestClient.get(url, params: params).body
-      return response
+      response = RestClient.get(url, params: params).body do
+        return ::JSON.parse(response)
+      end
     end
 
     private
