@@ -24,19 +24,19 @@ Or install it yourself as:
 
 Require the gem:
 
-require 'LF_challenge_consumer_scoring'
+    require 'LF_challenge_consumer_scoring'
 
 Create a new consumer:
 
-consumer = ConsumerScoring::Consumer.new
+    consumer = ConsumerScoring::Consumer.new
 
 Call new instance of consumer and pass parameters:
 
-scoring = consumer.scoring("50000", "60201", "35")
+    scoring = consumer.scoring("50000", "60201", "35")
 
 This will return:
 
-{propensity: 0.26532, ranking: "C"}
+    {propensity: 0.26532, ranking: "C"}
 
 
 ## Development
